@@ -1,11 +1,11 @@
 all: ejemplo1.c ejemplo2.c ejemplo3.c
 	gcc -o ejemplo1 ejemplo1.c
-	gcc -o ejemplo2 ejemplo2.c
+	gcc -o ejemplo2 ejemplo2.c -lpthread
 	gcc -o ejemplo3 ejemplo3.c
 1: ejemplo1.c
 	gcc -o ejemplo1 ejemplo1.c
 2: ejemplo2.c
-	gcc -o ejemplo2 ejemplo2.c
+	gcc -o ejemplo2 ejemplo2.c -lpthread
 3: ejemplo3.c
 	gcc -o ejemplo3 ejemplo3.c
 4:
