@@ -41,7 +41,7 @@ void proceso(int i)
 	for(k=0;k<CICLOS;k++)
 	{
 		// Entrada a la sección crítica
-		printf("Entra %s",pais[i]);
+		printf("Entra %s\n",pais[i]);
 		fflush(stdout);
 		sleep(rand()%3);
 		printf("- %s Sale\n",pais[i]);
