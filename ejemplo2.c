@@ -7,7 +7,7 @@
 							
 #define CICLOS 10
 
-char *pais[5]={"Peru","Bolvia","Colombia","Mexico","El Salvador"};
+char *pais[5]={"Peru","Bolvia","Colombia"};
 
 SEM_ID exmut_sem;
 
@@ -36,9 +36,9 @@ void *hilo1(void *arg)
 
 int main()
 {
-	pthread_t tid[5];
+	pthread_t tid[3];
 	int res;
-	int args[5];
+	int args[3];
 	int i;
 	void *thread_result;
 
@@ -47,14 +47,14 @@ int main()
 	srand(getpid());
 
 	// Crea los hilos
-	for(i=0;i<5;i++)
+	for(i=0;i<3;i++)
 	{
 		args[i]=i;
 		res = pthread_create(&tid[i], NULL, hilo1, (void *) &args[i]);
 	}
 
 	// Espera que terminen los hilos
-	for(i=0;i<5;i++)
+	for(i=0;i<3;i++)
 		res = pthread_join(tid[i], &thread_result);
 
 	erasesem(exmut_sem);
